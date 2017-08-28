@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Hotel template</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/w3.css">
+	<!--<link rel="stylesheet" href="css/styles.css">-->
+	<!--<link rel="stylesheet" href="css/css">-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		html, body, h1, h2, h3, h4, h5 {
+			font-family: "Raleway", sans-serif;
+		}
+	</style>
+</head>
+<body class="w3-white">
+	<!-- Top container -->
+	<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+		<button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();">
+			<i class="fa fa-bars"></i> &nbsp;Menu
+		</button>
+		<span class="w3-bar-item w3-right">Hotel's Logo</span>
+	</div>
+
+	<!-- Sidebar/menu -->
+	<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar">
+		<br>
+		<div class="w3-container w3-row">
+			<div class="w3-col s4">
+				<img src="images/avatar2.png" class="w3-circle w3-margin-right" style="width:46px">
+			</div>
+			<div class="w3-col s8 w3-bar">
+				<span>Hi, <strong>Admin</strong></span><br>
+				<a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
+				<a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
+				<a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
+			</div>
+		</div>
+		<hr>
+		<div class="w3-bar-block">
+			<a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>&nbsp; Close Menu</a>
+			<a href="index.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>&nbsp; Trang chủ</a>
+			<a href="room-states.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>&nbsp; Tình trạng phòng</a>
+			<a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>&nbsp; Views</a>
+			<a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>&nbsp; Traffic</a>
+			<a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>&nbsp; Geo</a>
+			<a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>&nbsp; Orders</a>
+			<a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>&nbsp; News</a>
+			<a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>&nbsp; General</a>
+			<a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>&nbsp; History</a>
+			<a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>&nbsp; Settings</a><br><br>
+		</div>
+	</nav>
+
+	<!-- Overlay effect when opening sidebar on small screens -->
+	<div class="w3-overlay w3-hide-large w3-animate-opacity"
+		 onclick="w3_close()"
+		 style="cursor:pointer"
+		 title="close side menu"
+		 id="myOverlay"></div>
+
+	<!-- !PAGE CONTENT! -->
+	<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+		<!-- Header -->
+		<header class="w3-container" style="padding-top:35px">
+			<h5><b><i class="fa fa-book"></i> Register-Đăng kí</b></h5>
+		</header>
+
+		<hr>
+		<!--MAIN CONTENT-->
+		<div class="w3-container w3-white">
+			<form action="/action_page.php" target="_blank">
+				<!-- STUFFS_TYPE -->
+				<p><label><i class="fa fa-pie-chart "></i> Loại vật tư</label></p>
+				<input class="w3-input w3-border" type="text" placeholder="" name="CheckIn" required="">
+
+				<!-- STUFFS_NAME -->
+				<p><label><i class="fa fa-list-ol "></i> Tên vật tư</label></p>
+				<input class="w3-input w3-border" type="text" placeholder="" name="CheckIn" required="">
+
+				<!-- TRADE_MARK -->
+				<p><label><i class="fa fa-server"></i> Nhãn hiệu</label></p>
+				<input class="w3-input w3-border" type="text" placeholder="" name="CheckOut" required="">
+
+				<!-- UNIT_PRICE -->
+				<p><label><i class="fa fa-info"></i> Đơn giá</label></p>
+				<input class="w3-input w3-border" type="text" placeholder="" name="CheckOut" required="">
+
+				<!-- UNIT -->
+				<p><label><i class="fa fa-info"></i> Đơn vị</label></p>
+				<input class="w3-input w3-border" type="text" placeholder="" name="CheckOut" required="">
+
+				<!-- REGISTER BUTTON -->
+				<p><button class="w3-button w3-green w3-left-align" type="submit"><i class="fa fa-floppy-o"></i> Save</button></p>
+			</form>
+		</div> <!-- End MAIN CONTENT -->
+
+		<!-- Footer -->
+		<!--<footer class="w3-container w3-padding-16 w3-light-grey">
+			<h4>FOOTER</h4>
+			<p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+		</footer>-->
+
+	</div> <!-- end div.w3-main -->
+
+	<!---->
+	<script type="text/javascript">
+
+		// Get the Sidebar
+		var mySidebar = document.getElementById("mySidebar");
+
+		// Get the DIV with overlay effect
+		var overlayBg = document.getElementById("myOverlay");
+
+		// Toggle between showing and hiding the sidebar, and add overlay effect
+		function w3_open() {
+			if (mySidebar.style.display === 'block') {
+				mySidebar.style.display = 'none';
+				overlayBg.style.display = "none";
+			} else {
+				mySidebar.style.display = 'block';
+				overlayBg.style.display = "block";
+			}
+		}
+
+		// Close the sidebar with the close button
+		function w3_close() {
+			mySidebar.style.display = "none";
+			overlayBg.style.display = "none";
+		}
+
+		function openCity(evt, cityName) {
+			var i;
+			var x = document.getElementsByClassName("floor");
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";
+			}
+			var activebtn = document.getElementsByClassName("testbtn");
+			for (i = 0; i < x.length; i++) {
+				activebtn[i].className = activebtn[i].className.replace(" w3-dark-grey", "");
+			}
+			document.getElementById(cityName).style.display = "block";
+			evt.currentTarget.className += " w3-dark-grey";
+		}
+	</script>
+</body>
+</html>

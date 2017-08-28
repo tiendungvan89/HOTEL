@@ -1,0 +1,8 @@
+﻿I)
+	1) Tao phong 
+	2) Tinh trang phong
+	3) Quan ly vat tu (ban ghe, tu, khan, chan man,...)
+	4) Do an thuc uong
+	5) Thanh toan
+
+II)
