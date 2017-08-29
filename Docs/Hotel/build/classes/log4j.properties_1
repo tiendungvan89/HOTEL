@@ -1,0 +1,22 @@
+# appenders
+logFormat=<%t %d{HH:mm:ss,SSS}> <%C:%L> %-5p - %m%n
+log4j.appender.appender_console=org.apache.log4j.ConsoleAppender
+log4j.appender.appender_console.layout=org.apache.log4j.PatternLayout
+log4j.appender.appender_console.layout.ConversionPattern=${logFormat}
+
+log4j.appender.appender_file=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.appender_file.layout=org.apache.log4j.PatternLayout
+log4j.appender.appender_file.layout.ConversionPattern=${logFormat}
+log4j.appender.appender_file.File=${webRootDir}/../../../logs/log
+log4j.appender.appender_file.DatePattern='-'yyyy.MM.dd'.log'
+
+# config for all packages
+log4j.rootLogger=DEBUG
+
+# config for specific packages
+log4j.logger.com.setsuna.nebula=TRACE,DEBUG,appender_console
+log4j.logger.org.apache.ibatis=DEBUG,appender_console
+log4j.logger.org.mybatis=DEBUG,appender_console
+log4j.logger.java.sql=DEBUG,appender_console
+log4j.logger.java.sql.PreparedStatement=DEBUG,appender_console
+log4j.logger.java.sql.Statement=DEBUG,appender_console

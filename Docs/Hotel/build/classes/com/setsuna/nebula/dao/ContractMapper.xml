@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.setsuna.nebula.dao.ContractMapper">
+
+	<resultMap id="ContractBaseResultMap" type="com.setsuna.nebula.entity.Contract">
+		<result column="id"						property="id"					jdbcType="BIGINT" />
+		<result column="cmnd"					property="cmnd"					jdbcType="VARCHAR" />
+		<result column="contract_date"			property="contractDate"			jdbcType="VARCHAR" />
+		<result column="start_working_date"		property="startWorkingDate"		jdbcType="VARCHAR" />
+		<result column="end_working_date"		property="endWorkingDate"		jdbcType="VARCHAR" />
+		<result column="termination_date"		property="terminationDate"		jdbcType="VARCHAR" />
+		<result column="status"					property="status"				jdbcType="INTEGER" />
+
+		<association property="employee" javaType="com.setsuna.nebula.entity.Employee">
+			<result column="cmnd"			property="cmnd"			jdbcType="VARCHAR" />
+			<result column="hoten"			property="hoten"		jdbcType="VARCHAR" />
+			<result column="quequan"		property="quequan"		jdbcType="VARCHAR" />
+		</association>
+
+		<association property="contractType" javaType="com.setsuna.nebula.entity.ContractType">
+			<result column="ct_id"			property="id"			jdbcType="BIGINT" />
+			<result column="ct_name"		property="name"			jdbcType="VARCHAR" />
+			<result column="ct_note"		property="note"			jdbcType="VARCHAR" />
+			<result column="ct_status"		property="status"		jdbcType="INTEGER" />
+		</association>
+
+		<association property="contractTerminationReason" javaType="com.setsuna.nebula.entity.ContractTerminationReason">
+			<result column="ctr_id"			property="id"			jdbcType="BIGINT" />
+			<result column="ctr_name"		property="name"			jdbcType="VARCHAR" />
+			<result column="ctr_note"		property="note"			jdbcType="VARCHAR" />
+			<result column="ctr_status"		property="status"		jdbcType="INTEGER" />
+		</association>
+	</resultMap>
+
+	<update id="update" parameterType="map">
+		UPDATE contract
+		<set>
+			<if test="contract.cmnd != null">
+				cmnd = #{contract.cmnd,jdbcType=VARCHAR},
+			</if>
+			<if test="contract.contractDate != null">
+				contract_date = #{contract.contractDate,jdbcType=VARCHAR},
+			</if>
+			<if test="contract.startWorkingDate != null">
+				start_working_date = #{contract.startWorkingDate,jdbcType=VARCHAR},
+			</if>
+			<if test="contract.endWorkingDate != null">
+				end_working_date = #{contract.endWorkingDate,jdbcType=VARCHAR},
+			</if>
+			<if test="contract.terminationDate != null">
+				termination_date = #{contract.terminationDate,jdbcType=VARCHAR},
+			</if>
+			<if test="contractTypeId != null">
+				contract_type_id = #{contractTypeId,jdbcType=BIGINT},
+			</if>
+			<if test="terminationReasonId != null">
+				termination_reason_id = #{terminationReasonId,jdbcType=BIGINT},
+			</if>
+			<if test="contract.status != null">
+				status = #{contract.status,jdbcType=INTEGER}
+			</if>
+		</set>
+		<where>
+			id = #{id,jdbcType=BIGINT}
+		</where>
+	</update>
+
+	<insert id="insert" parameterType="map"
+		useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+		INSERT INTO contract
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="contract.cmnd != null">
+				cmnd,
+			</if>
+			<if test="contract.contractDate != null">
+				contract_date,
+			</if>
+			<if test="contract.startWorkingDate != null">
+				start_working_date,
+			</if>
+			<if test="contract.endWorkingDate != null">
+				end_working_date,
+			</if>
+			<if test="contract.terminationDate != null">
+				termination_date,
+			</if>
+			<if test="contractTypeId != null">
+				contract_type_id,
+			</if>
+			<if test="terminationReasonId != null">
+				termination_reason_id,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="contract.cmnd != null">
+				#{contract.cmnd,jdbcType=VARCHAR},
+			</if>
+			<if test="contract.contractDate != null">
+				#{contract.contractDate,jdbcType=VARCHAR},
+			</if>
+			<if test="contract.startWorkingDate != null">
+				#{contract.startWorkingDate,jdbcType=VARCHAR},
+			</if>
+			<if test="contract.endWorkingDate != null">
+				#{contract.endWorkingDate,jdbcType=VARCHAR},
+			</if>
+			<if test="contract.terminationDate != null">
+				#{contract.terminationDate,jdbcType=VARCHAR},
+			</if>
+			<if test="contractTypeId != null">
+				#{contractTypeId,jdbcType=BIGINT},
+			</if>
+			<if test="terminationReasonId != null">
+				#{terminationReasonId,jdbcType=BIGINT},
+			</if>
+		</trim>
+	</insert>
+
+	<select id="selectBy" resultMap="ContractBaseResultMap" >
+		SELECT
+			e.hoten, e.quequan,
+			c.id, c.cmnd, c.contract_date, c.start_working_date, c.end_working_date, c.termination_date, c.status,
+			ct.id AS ct_id, ct.name AS ct_name, ct.note AS ct_note, ct.status AS ct_status,
+			ctr.id AS ctr_id, ctr.name AS ctr_name, ctr.note AS ctr_note, ctr.status AS ctr_status
+		FROM contract c
+			LEFT JOIN employee e ON e.cmnd = c.cmnd
+			LEFT JOIN contract_type ct ON ct.id = c.contract_type_id
+			LEFT JOIN contract_termination_reason ctr ON ctr.id = c.termination_reason_id
+		<if test="param != null">
+			WHERE 1 = 1
+			<if test="param.id != null">
+				AND c.id = #{param.id,jdbcType=BIGINT}
+			</if>
+			<if test="param.cmnd != null">
+				AND c.cmnd LIKE '%' || #{param.cmnd,jdbcType=VARCHAR} || '%'
+			</if>
+
+			<if test="param.contract_date_from != null">
+				AND c.contract_date &gt;= #{param.contract_date_from,jdbcType=VARCHAR}
+			</if>
+			<if test="param.contract_date_to != null">
+				AND c.contract_date &lt;= #{param.contract_date_to,jdbcType=VARCHAR}
+			</if>
+
+			<if test="param.start_working_date_from != null">
+				AND c.start_working_date &gt;= #{param.start_working_date_from,jdbcType=VARCHAR}
+			</if>
+			<if test="param.start_working_date_to != null">
+				AND c.start_working_date &lt;= #{param.start_working_date_to,jdbcType=VARCHAR}
+			</if>
+
+			<if test="param.termination_date_from != null">
+				AND c.termination_date &gt;= #{param.termination_date_from,jdbcType=VARCHAR}
+			</if>
+			<if test="param.termination_date_to != null">
+				AND c.termination_date &lt;= #{param.termination_date_to,jdbcType=VARCHAR}
+			</if>
+
+			<if test="param.contract_type_id != null">
+				AND c.contract_type_id = #{param.contract_type_id,jdbcType=BIGINT}
+			</if>
+			<if test="param.termination_reason_id != null">
+				AND c.termination_reason_id = #{param.termination_reason_id,jdbcType=BIGINT}
+			</if>
+			<if test="param.status != null">
+				AND c.status = #{param.status,jdbcType=INTEGER}
+			</if>
+		</if>
+		<if test="param.order_by == null">
+			ORDER BY e.hoten COLLATE utf8_unicode_ci ASC, c.contract_date COLLATE utf8_unicode_ci ASC
+		</if>
+		<if test="param.order_by != null">
+			ORDER BY ${param.order_by}
+		</if>
+	</select>
+
+</mapper>

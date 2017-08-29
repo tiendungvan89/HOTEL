@@ -1,463 +1,63 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Hotel template</title>
+	<title>W3.CSS</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="css/w3.css">
-	<!--<link rel="stylesheet" href="css/styles.css">-->
-	<!--<link rel="stylesheet" href="css/css">-->
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<style>
-		html, body, h1, h2, h3, h4, h5 {
-			font-family: "Raleway", sans-serif;
+		@media screen and (max-width: 455px) {
+			.h3 {
+				font-size: 16px;
+			}
 		}
 	</style>
 </head>
-<body class="w3-white">
-	<!-- Top container -->
-	<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
-		<button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();">
-			<i class="fa fa-bars"></i> &nbsp;Menu
-		</button>
-		<span class="w3-bar-item w3-right">Hotel's Logo</span>
+<body style="background:#e6e6e6;color:black;">
+
+	<div class="w3-sidebar w3-light-grey w3-card-4 w3-animate-left" style="width: 180px; display: none;" id="mySidebar">
+		<div class="w3-bar w3-dark-grey">
+			<span class="w3-bar-item w3-padding-16">Content</span>
+			<button onclick="w3_close()" class="w3-bar-item w3-button w3-right w3-padding-16" title="close Sidebar">×</button>
+		</div>
+		<div class="w3-bar-block">
+			<a class="w3-bar-item w3-button w3-green" href="javascript:void(0)">Home</a>
+			<a class="w3-bar-item w3-button" href="javascript:void(0)">About</a>
+			<a class="w3-bar-item w3-button" href="javascript:void(0)">Contact</a>
+			<div class="w3-dropdown-hover">
+				<a class="w3-button" href="javascript:void(0)">Dropdown <i class="fa fa-caret-down"></i></a>
+				<div class="w3-dropdown-content w3-bar-block w3-card-4">
+					<a class="w3-bar-item w3-button" href="javascript:void(0)">Link 1</a>
+					<a class="w3-bar-item w3-button" href="javascript:void(0)">Link 2</a>
+					<a class="w3-bar-item w3-button" href="javascript:void(0)">Link 3</a>
+				</div>
+			</div>
+			<a class="w3-bar-item w3-button" href="javascript:void(0)">Support</a>
+		</div>
 	</div>
 
-	<!-- Sidebar/menu -->
-	<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar">
-		<br>
-		<div class="w3-container w3-row">
-			<div class="w3-col s4">
-				<img src="images/avatar2.png" class="w3-circle w3-margin-right" style="width:46px">
-			</div>
-			<div class="w3-col s8 w3-bar">
-				<span>Hi, <strong>Admin</strong></span><br>
-				<a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
-				<a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
-				<a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
-			</div>
+	<div id="main" style="margin-left: 0px;">
+
+		<div class="w3-container w3-display-container">
+			<span title="open Sidebar" style="display: inline-block;" id="openNav" class="w3-button w3-transparent w3-display-topleft w3-xlarge" onclick="w3_open()">☰</span>
+			<h3 class="h3" style="position:fixed;top:36px;">My Page</h3>
 		</div>
-		<hr>
-		<div class="w3-bar-block">
-			<a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>&nbsp; Close Menu</a>
-			<a href="index.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>&nbsp; Trang chủ</a>
-			<a href="room-states.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>&nbsp; Tình trạng phòng</a>
-			<a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>&nbsp; Views</a>
-			<a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>&nbsp; Traffic</a>
-			<a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>&nbsp; Geo</a>
-			<a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>&nbsp; Orders</a>
-			<a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>&nbsp; News</a>
-			<a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>&nbsp; General</a>
-			<a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>&nbsp; History</a>
-			<a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>&nbsp; Settings</a><br><br>
-		</div>
-	</nav>
 
-	<!-- Overlay effect when opening sidebar on small screens -->
-	<div class="w3-overlay w3-hide-large w3-animate-opacity"
-		 onclick="w3_close()"
-		 style="cursor:pointer"
-		 title="close side menu"
-		 id="myOverlay"></div>
+	</div>
 
-	<!-- !PAGE CONTENT! -->
-	<div class="w3-main" style="margin-left:300px;margin-top:43px;">
-		<!-- Header -->
-		<header class="w3-container" style="padding-top:35px">
-			<h5><b><i class="fa fa-dashboard"></i> Tình trạng phòng</b></h5>
-		</header>
-
-		<hr>
-		<div class="w3-container w3-white">
-
-			<div class="w3-border">
-				<div class="w3-bar w3-border-bottom w3-light-grey intronav">
-					<a class="w3-bar-item w3-button testbtn w3-dark-grey" onclick="openCity(event, 'floor-1')" id="myLink">Lầu 1</a>
-					<a class="w3-bar-item w3-button testbtn" onclick="openCity(event, 'floor-2')">Lầu 2</a>
-					<a class="w3-bar-item w3-button testbtn" onclick="openCity(event, 'floor-3')">Lầu 3</a>
-				</div>
-
-				<div id="floor-1" class="w3-container floor w3-animate-opacity" style="display: block; padding-bottom: 10px; padding-top: 10px;">
-					<div class="w3-row-padding w3-margin-bottom ">
-						<div class="w3-quarter">
-							<div class="w3-container w3-red w3-padding-16">
-								<div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
-								<div class="w3-right">
-									<h3>52</h3>
-								</div>
-								<div class="w3-clear"></div>
-								<h4>Messages</h4>
-							</div>
-						</div>
-						<div class="w3-quarter">
-							<div class="w3-container w3-blue w3-padding-16">
-								<div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
-								<div class="w3-right">
-									<h3>99</h3>
-								</div>
-								<div class="w3-clear"></div>
-								<h4>Views</h4>
-							</div>
-						</div>
-						<div class="w3-quarter">
-							<div class="w3-container w3-teal w3-padding-16">
-								<div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>
-								<div class="w3-right">
-									<h3>23</h3>
-								</div>
-								<div class="w3-clear"></div>
-								<h4>Shares</h4>
-							</div>
-						</div>
-						<div class="w3-quarter">
-							<div class="w3-container w3-orange w3-text-white w3-padding-16">
-								<div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
-								<div class="w3-right">
-									<h3>50</h3>
-								</div>
-								<div class="w3-clear"></div>
-								<h4>Users</h4>
-							</div>
-						</div>
-					</div>
-
-					<div class="w3-row-padding w3-margin-bottom ">
-						<div class="w3-quarter">
-							<div class="w3-container w3-red w3-padding-16">
-								<div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
-								<div class="w3-right">
-									<h3>52</h3>
-								</div>
-								<div class="w3-clear"></div>
-								<h4>Messages</h4>
-							</div>
-						</div>
-						<div class="w3-quarter">
-							<div class="w3-container w3-blue w3-padding-16">
-								<div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
-								<div class="w3-right">
-									<h3>99</h3>
-								</div>
-								<div class="w3-clear"></div>
-								<h4>Views</h4>
-							</div>
-						</div>
-						<div class="w3-quarter">
-							<div class="w3-container w3-teal w3-padding-16">
-								<div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>
-								<div class="w3-right">
-									<h3>23</h3>
-								</div>
-								<div class="w3-clear"></div>
-								<h4>Shares</h4>
-							</div>
-						</div>
-						<div class="w3-quarter">
-							<div class="w3-container w3-orange w3-text-white w3-padding-16">
-								<div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
-								<div class="w3-right">
-									<h3>50</h3>
-								</div>
-								<div class="w3-clear"></div>
-								<h4>Users</h4>
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-				<div id="floor-2" class="w3-container floor w3-animate-opacity" style="display: none;">
-					<div class="w3-row">
-						<div class="w3-col m2 w3-green w3-center">
-							<p>m2</p>
-						</div>
-						<div class="w3-col m2 w3-red w3-center">
-							<p>m2</p>
-						</div>
-						<div class="w3-col m2 w3-blue w3-center">
-							<p>m2</p>
-						</div>
-						<div class="w3-col m2 w3-dark-grey w3-center">
-							<p>m2</p>
-						</div>
-						<div class="w3-col m2 w3-black w3-center">
-							<p>m2</p>
-						</div>
-						<div class="w3-col m2 w3-purple w3-center">
-							<p>m2</p>
-						</div>
-					</div>
-					<div class="w3-row">
-						<div class="w3-col m2 w3-green w3-center">
-							<p>m2</p>
-						</div>
-						<div class="w3-col m2 w3-red w3-center">
-							<p>m2</p>
-						</div>
-						<div class="w3-col m2 w3-blue w3-center">
-							<p>m2</p>
-						</div>
-						<div class="w3-col m2 w3-dark-grey w3-center">
-							<p>m2</p>
-						</div>
-						<div class="w3-col m2 w3-black w3-center">
-							<p>m2</p>
-						</div>
-						<div class="w3-col m2 w3-purple w3-center">
-							<p>m2</p>
-						</div>
-					</div>
-					<div class="w3-row">
-						<div class="w3-col m2 w3-green w3-center">
-							<p>m2</p>
-						</div>
-						<div class="w3-col m2 w3-red w3-center">
-							<p>m2</p>
-						</div>
-						<div class="w3-col m2 w3-blue w3-center">
-							<p>m2</p>
-						</div>
-						<div class="w3-col m2 w3-dark-grey w3-center">
-							<p>m2</p>
-						</div>
-						<div class="w3-col m2 w3-black w3-center">
-							<p>m2</p>
-						</div>
-						<div class="w3-col m2 w3-purple w3-center">
-							<p>m2</p>
-						</div>
-					</div>
-					<!--end floor-2-->
-				</div>
-
-				<div id="floor-3" class="w3-container floor w3-animate-opacity" style="display: none;">
-					<div class="w3-quarter room">
-						<div class="w3-container w3-red w3-padding-16">
-							<div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
-							<div class="w3-right">
-								<h3>52</h3>
-							</div>
-							<div class="w3-clear"></div>
-							<h4>Messages</h4>
-						</div>
-					</div>
-
-					<div class="w3-quarter room">
-						<div class="w3-container w3-blue w3-padding-16">
-							<div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
-							<div class="w3-right">
-								<h3>99</h3>
-							</div>
-							<div class="w3-clear"></div>
-							<h4>Views</h4>
-						</div>
-					</div>
-
-					<div class="w3-quarter room">
-						<div class="w3-container w3-teal w3-padding-16">
-							<div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>
-							<div class="w3-right">
-								<h3>23</h3>
-							</div>
-							<div class="w3-clear"></div>
-							<h4>Shares</h4>
-						</div>
-					</div>
-
-					<div class="w3-quarter room">
-						<div class="w3-container w3-orange w3-text-white w3-padding-16">
-							<div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
-							<div class="w3-right">
-								<h3>50</h3>
-							</div>
-							<div class="w3-clear"></div>
-							<h4>Users</h4>
-						</div>
-					</div>
-
-					<div class="w3-quarter room">
-						<div class="w3-container w3-blue w3-padding-16">
-							<div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
-							<div class="w3-right">
-								<h3>52</h3>
-							</div>
-							<div class="w3-clear"></div>
-							<h4>Messages</h4>
-						</div>
-					</div>
-
-					<div class="w3-quarter room">
-						<div class="w3-container w3-red w3-padding-16">
-							<div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
-							<div class="w3-right">
-								<h3>99</h3>
-							</div>
-							<div class="w3-clear"></div>
-							<h4>Views</h4>
-						</div>
-					</div>
-
-					<div class="w3-quarter room">
-						<div class="w3-container w3-orange w3-padding-16">
-							<div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>
-							<div class="w3-right">
-								<h3>23</h3>
-							</div>
-							<div class="w3-clear"></div>
-							<h4>Shares</h4>
-						</div>
-					</div>
-
-					<div class="w3-quarter room">
-						<div class="w3-container w3-teal w3-text-white w3-padding-16">
-							<div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
-							<div class="w3-right">
-								<h3>50</h3>
-							</div>
-							<div class="w3-clear"></div>
-							<h4>Users</h4>
-						</div>
-					</div>
-
-					<div class="w3-quarter room">
-						<div class="w3-container w3-red w3-padding-16">
-							<div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
-							<div class="w3-right">
-								<h3>52</h3>
-							</div>
-							<div class="w3-clear"></div>
-							<h4>Messages</h4>
-						</div>
-					</div>
-
-					<div class="w3-quarter room">
-						<div class="w3-container w3-blue w3-padding-16">
-							<div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
-							<div class="w3-right">
-								<h3>99</h3>
-							</div>
-							<div class="w3-clear"></div>
-							<h4>Views</h4>
-						</div>
-					</div>
-
-					<div class="w3-quarter room">
-						<div class="w3-container w3-teal w3-padding-16">
-							<div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>
-							<div class="w3-right">
-								<h3>23</h3>
-							</div>
-							<div class="w3-clear"></div>
-							<h4>Shares</h4>
-						</div>
-					</div>
-
-					<div class="w3-quarter room">
-						<div class="w3-container w3-orange w3-text-white w3-padding-16">
-							<div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
-							<div class="w3-right">
-								<h3>50</h3>
-							</div>
-							<div class="w3-clear"></div>
-							<h4>Users</h4>
-						</div>
-					</div>
-					<div class="w3-quarter room">
-						<div class="w3-container w3-blue w3-padding-16">
-							<div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
-							<div class="w3-right">
-								<h3>52</h3>
-							</div>
-							<div class="w3-clear"></div>
-							<h4>Messages</h4>
-						</div>
-					</div>
-
-					<div class="w3-quarter room">
-						<div class="w3-container w3-red w3-padding-16">
-							<div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
-							<div class="w3-right">
-								<h3>99</h3>
-							</div>
-							<div class="w3-clear"></div>
-							<h4>Views</h4>
-						</div>
-					</div>
-
-					<div class="w3-quarter room">
-						<div class="w3-container w3-orange w3-padding-16">
-							<div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>
-							<div class="w3-right">
-								<h3>23</h3>
-							</div>
-							<div class="w3-clear"></div>
-							<h4>Shares</h4>
-						</div>
-					</div>
-
-					<div class="w3-quarter room">
-						<div class="w3-container w3-teal w3-text-white w3-padding-16">
-							<div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
-							<div class="w3-right">
-								<h3>50</h3>
-							</div>
-							<div class="w3-clear"></div>
-							<h4>Users</h4>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-		<!-- Footer -->
-		<!--<footer class="w3-container w3-padding-16 w3-light-grey">
-			<h4>FOOTER</h4>
-			<p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-		</footer>-->
-
-	</div> <!-- end div.w3-main -->
-
-	<!---->
-	<script type="text/javascript">
-
-		// Get the Sidebar
-		var mySidebar = document.getElementById("mySidebar");
-
-		// Get the DIV with overlay effect
-		var overlayBg = document.getElementById("myOverlay");
-
-		// Toggle between showing and hiding the sidebar, and add overlay effect
-		function w3_open() {
-			if (mySidebar.style.display === 'block') {
-				mySidebar.style.display = 'none';
-				overlayBg.style.display = "none";
-			} else {
-				mySidebar.style.display = 'block';
-				overlayBg.style.display = "block";
-			}
-		}
-
-		// Close the sidebar with the close button
-		function w3_close() {
-			mySidebar.style.display = "none";
-			overlayBg.style.display = "none";
-		}
-
-		function openCity(evt, cityName) {
-			var i;
-			var x = document.getElementsByClassName("floor");
-			for (i = 0; i < x.length; i++) {
-				x[i].style.display = "none";
-			}
-			var activebtn = document.getElementsByClassName("testbtn");
-			for (i = 0; i < x.length; i++) {
-				activebtn[i].className = activebtn[i].className.replace(" w3-dark-grey", "");
-			}
-			document.getElementById(cityName).style.display = "block";
-			evt.currentTarget.className += " w3-dark-grey";
-		}
+	<script>
+function w3_open() {
+  document.getElementById("main").style.marginLeft = "180px";
+  document.getElementById("mySidebar").style.width = "180px";
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("openNav").style.display = 'none';
+}
+function w3_close() {
+  document.getElementById("main").style.marginLeft = "0";
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("openNav").style.display = "inline-block";
+}
 	</script>
+
+
 </body>
-	
-	
 </html>

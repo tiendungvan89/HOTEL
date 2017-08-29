@@ -1,0 +1,18 @@
+required_username_pw=Nhập vào Username và Password.
+user_not_exist=User không tồn tại.
+
+required_old_pw=Nhập vào mật khẩu cũ.
+required_new_pw=Nhập vào mật khẩu mới.
+required_new_pw_confirm=Nhập lại mật khẩu mới.
+new_pw_not_match=Mật khẩu mới không trùng nhau.
+old_pw_not_match=Mật khẩu cũ không chính xác.
+
+required_fromDate=Nhập vào giá trị của [Từ ngày].
+invalid_fromDate=Giá trị của [Từ ngày] phải nhỏ hơn hoặc bằng ngày hiện tại.
+invalid_toDate=Giá trị của [Đến ngày] phải nhỏ hơn [Từ ngày].
+
+no_data=Không có dữ liệu.
+
+#employee
+required_item=Mục bắt buộc.
+duplicate={0} đã tồn tại.

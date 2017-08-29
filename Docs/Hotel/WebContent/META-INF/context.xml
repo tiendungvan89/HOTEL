@@ -1,0 +1,45 @@
+<Context docBase="TRA_SUA_BT_XANH" path="/TRA_SUA_BT_XANH" reloadable="true" cachingAllowed="false" disableURLRewriting="true">
+
+<!-- localhost -->
+<!-- 	<Resource  -->
+<!-- 		name="TRA_SUA_BT_XANH_DB" -->
+<!-- 		auth="Container" -->
+<!-- 		type="javax.sql.DataSource" -->
+<!-- 		driverClassName="com.mysql.jdbc.Driver" -->
+<!-- 		url="jdbc:mysql://localhost:3306/trasua_bt_xanh?useUnicode=true&amp;characterEncoding=UTF-8" -->
+<!-- 		username="root" -->
+<!-- 		password="123456" -->
+<!-- 		maxActive="10" -->
+<!-- 		maxIdle="5" -->
+<!-- 		maxWait="-1"> -->
+<!-- 	</Resource> -->
+<!-- 112.213.89.82:3306 -->
+<!-- real host -->
+	<Resource 
+		name="TRA_SUA_BT_XANH_DB"
+		auth="Container"
+		type="javax.sql.DataSource"
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://112.213.89.82:3306/congty82_guard_security?useUnicode=true&amp;characterEncoding=UTF-8"
+		username="congty82_user_1"
+		password="Conga2con"
+		maxActive="10"
+		maxIdle="5"
+		maxWait="-1">
+	</Resource>
+
+<!-- free host -->	
+<!-- 	<Resource  -->
+<!-- 		name="TRA_SUA_BT_XANH_DB" -->
+<!-- 		auth="Container" -->
+<!-- 		type="javax.sql.DataSource" -->
+<!-- 		driverClassName="com.mysql.jdbc.Driver" -->
+<!-- 		url="jdbc:mysql://72.13.93.206:3307/nebulaqueen?useUnicode=true&amp;characterEncoding=UTF-8" -->
+<!-- 		username="nebulaqueen" -->
+<!-- 		password="congacon" -->
+<!-- 		maxActive="5" -->
+<!-- 		maxIdle="5" -->
+<!-- 		maxWait="-1"> -->
+<!-- 	</Resource> -->
+
+</Context>

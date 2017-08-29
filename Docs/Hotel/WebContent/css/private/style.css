@@ -1,0 +1,375 @@
+@CHARSET "UTF-8";
+body {
+	font-size: 17px;
+	font-family: Tahoma,Calibri,Verdana,Geneva,sans-serif;
+	margin: 0px;
+	padding: 0px;
+	background-color: #FFFFFF;
+	color: rgb(17, 34, 17);
+}
+h1 {
+	text-align: left;
+	font-size: 25px;
+	color: #006699;
+	margin: 0px;
+	margin-left: 10px;
+	padding: 5px 5px 4px 5px;
+}
+table {
+	border-collapse:separate;
+	border-spacing:0 5px;
+}
+input[type='text'], input[type='password'], textarea, select {
+	margin: 0px;
+	padding: 5px;
+	font-size: 15px;
+}
+
+a:visited, a:link {
+	color: #006699;
+}
+img {
+	border: none;
+}
+
+.errorMessage {
+	color: red;
+}
+
+.wrap {
+	width: 100%;
+	margin: 0 auto;
+}
+.EasyMainBg {
+	background-color: #FFFFFF;
+	clear: both;
+	padding: 20px;
+}
+.EasyMainBg a:hover {
+	text-decoration: underline;
+}
+.EasyMainBg a {
+	text-decoration: none;
+}
+.EasyMainTitle {
+	margin-top: -2ex;
+	margin-bottom: 2px;
+}
+.EasyRoundTc {
+	background: #00BFA5 top repeat-x;
+}
+.EasyRoundBc {
+}
+.EasyTitleHead {
+	height: 5px;
+	margin-top: 5px;
+}
+.EasyTitleHead div {
+	height: 5px;
+}
+.EasyTitleBody {
+}
+.EasyTitleBody div {
+}
+.EasyTitleBottom {
+	height: 5px;
+	margin-bottom: 5px;
+}
+.EasyTitleBottom div {
+	height: 5px;
+}
+.EasyMyMenu {
+	background: #CEDF9D;
+	color: #444444;
+	padding: 5px;
+}
+.MyTableMenu * {
+}
+/*              [START] Login form                 */
+.EasyLogin {
+	display: block;
+	color: pink;
+	width: 300px;
+	margin-top: 2%;
+	margin-right: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+	background: #00BFA5;
+	height: 118px;
+	padding: 20px;
+}
+.EasyLogin table {
+	text-align: center;
+	color: #FFFFFF;
+	font-weight: bold;
+	width: 200px;
+	border: 0px;
+}
+.EasyLogin input {
+	width: 100px;
+}
+/*              [END] Login form                 */
+
+/*              [START] Menu top                 */
+.EasyInlineMenu {
+	line-height: normal;
+	font-weight: bold;
+	background: #DDDDDD;
+}
+.EasyInlineMenu table {
+	border: 0px;
+	border-spacing: 0px;
+	padding: 0px;
+}
+.EasyInlineMenu table th {
+	white-space: nowrap;
+	padding: 0px;
+}
+.EasyInlineMenu .on a {
+	margin: 0;
+	padding: 5px 5px 0px 10px;
+	text-decoration: none;
+	border-bottom: 5px solid red;
+}
+.EasyInlineMenu a {
+	float: left;
+	margin: 0;
+	padding: 5px 5px 5px 10px;
+	text-decoration: none;
+}
+.EasyInlineMenu .on a span {
+	float: none;
+}
+.EasyInlineMenu .on a span {
+	display: block;
+	padding: 3px 15px 3px 1px;
+	color: #00BFA5;
+}
+.EasyInlineMenu a span {
+	float: none;
+}
+.EasyInlineMenu a span {
+	display: block;
+	color: #000000;
+	padding-top: 3px;
+	padding-right: 15px;
+	padding-bottom: 3px;
+	padding-left: 1px;
+}
+/*              [END] Menu top                 */
+
+/*              [START] Side menu              */
+.sidemenu_bt a {
+	vertical-align: middle;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.sidemenu_bt a:hover {
+	vertical-align: middle;
+	color: rgb(255, 216, 208);
+	text-decoration: underline;
+}
+/*              [END] Side menu                */
+
+/*              [START] Form                   */
+.EasySubmit {
+	background-color: #FFE4E1;
+	margin: 0px;
+	padding: 0px;
+	height: 1.6em;
+}
+/* .EasyInput, .EasyResult1, .EasyResult2, .EasyResult3, .EasyInputMatrix, .EasyInputArray, .EasyCalendar, .EasyTree { */
+.EasyInput, .EasyResult2 {
+	background-color: #CCCCCC;
+}
+.EasyInput img {
+	vertical-align: top;
+}
+.EasyMainBg th.EasyTH {
+	background-color: #D9D9D9;
+	text-align: left;
+	font-weight: normal;
+}
+/* .EasyTH, .EasyVTitle, .EasyHTitle, .EasyIA, .EasyIA2, .EasySelTD, .EasyPageTotal, .EasyTotal { */
+.EasyTH, .EasyTD, .EasyTD2 {
+	border-style: solid;
+	border-width: 1px 1px 1px 1px;
+	border-color: #AAAAAA;
+	height: 20px;
+	line-height: 20px;
+}
+.EasyTH a, .EasyTD a, .EasyTD2 a {
+	color: #225533;
+}
+.EasyTH {
+	background: #CEDF9D;
+	color: #444444;
+	padding: 5px;
+}
+.EasyTOP {
+	background: #FFFFFF;
+	color: #444444;
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+.EasyTD {
+	background: #FFFFFF;
+	color: #444444;
+	padding: 5px;
+}
+.EasyTD2 {
+	background: #EEFFDE;
+	color: #444444;
+}
+.EasyNoEntry {
+	background: #CCCCCC;
+}
+.EasyFocus {
+	background: none repeat scroll 0% 0% rgb(255, 255, 204) !important;
+}
+.EasyNotNull {
+	background: #DEFFBD;
+}
+.EasyError {
+	background-color: #FFFFFF;
+	width: 94%;
+	color: red;
+}
+.EasyError ul {
+	margin: 0px;
+	padding: 0px;
+}
+.EasyError ul li {
+	list-style-type: none;
+}
+.list_volume {
+}
+.EasyBtMenu {
+	line-height: normal;
+	margin-bottom: 15px;
+}
+.EasyBtMenu a span, .EasyBtMenu .on span {
+	display: block;
+	padding: 2px 5px 2px 5px;
+	color: #000000;
+	margin: 0px 3px 0px 0px;
+	background-color: #FFFFFF;
+	line-height: 20px;
+	height: 20px;
+}
+.EasyBtMenu .on span {
+	float: left;
+	color: #006699;
+	border: 1px solid #006699;
+	font-weight: bold;
+}
+.EasySubMenu {
+	padding: 1px 3px 1px 3px;
+}
+.EasyBtMenu a {
+	float: left;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+.EasyBtMenu a span {
+	float: none;
+	color: #000000;
+	border: 1px solid #999999;
+}
+.EasyBtMenu .on span img, .EasyBtMenu a span img {
+	vertical-align: middle;
+	padding-right: 3px;
+}
+.Number {
+	text-align: right !important;
+}
+/*              [END] Form                     */
+
+/*              [START] Footer                 */
+.footer {
+	color: #666666;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 20px;
+}
+/*              [END] Footer                   */
+/*............[START] DATE PICKER...............*/
+.MyDatepicker {
+	padding: 5px;
+	width: 150px;
+}
+/*............[END] DATE PICKER.................*/
+.MySelect {
+	padding: 5px;
+	width: 170px;
+}
+.pagingButton {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-right: 2px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color:black;
+	text-decoration: none !important;
+	cursor: pointer;
+}
+.pagingButton:HOVER{
+	background-color: #cacaca;
+}
+.pagingDisableButton {
+	cursor: pointer;
+	color:black;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-right: 2px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background-color: #00BFA5;
+	outline: 0;
+	border: 0;
+	text-decoration: none !important;
+}
+.main_title{
+	padding-left: 10px;
+	padding-top: 0px;
+	padding-right: 10px;
+	padding-bottom: 0px;
+	color: #006699;
+}
+.SimpleTD {
+	color: #006699;
+	background: #FFFFFF;
+	padding: 5px;
+	border-style: solid;
+	border-width: 5px;
+	border-color: #00BFA5;
+}
+.SimpleTextfield {
+	padding: 5px;
+}
+.text-upper-case {
+	text-transform: uppercase;
+}
+.bold-blue {
+	font-weight: bold;
+	color: #0000ff;
+}
+.bold {
+	font-weight: bold;
+}
+.btn_submit {
+	padding: 10px;
+	min-width: 150px;
+	font-size: 15px;
+}
+.btn_normal {
+	padding: 10px;
+	min-width: 150px;
+	font-size: 15px;
+}

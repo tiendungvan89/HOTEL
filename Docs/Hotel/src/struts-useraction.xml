@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="user" namespace="/" extends="default">
+
+		<action name="change_password_init" class="com.setsuna.nebula.action.UserAction"
+			method="changePasswordInit">
+			<result name="success">/WEB-INF/jsp/private/change_password.jsp</result>
+		</action>
+
+		<action name="change_password" class="com.setsuna.nebula.action.UserAction"
+			method="changePassword">
+			<result name="input">/WEB-INF/jsp/private/change_password.jsp</result>
+			<result name="error">/WEB-INF/jsp/private/change_password.jsp</result>
+			<result name="success" type="redirectAction">login_init</result>
+		</action>
+
+	</package>
+</struts>

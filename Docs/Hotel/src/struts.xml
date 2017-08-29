@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.action.extension" value="," />
+	 <constant name="struts.enable.SlashesInActionNames" value="true"/>
+	<constant name="struts.mapper.action.prefix.enabled" value="true" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.custom.i18n.resources" value="ApplicationResources,messages" />
+
+	<package name="default" namespace="/" extends="struts-default,json-default">
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+
+		<interceptors>
+			<interceptor name="authentication"
+				class="com.setsuna.nebula.interceptor.AuthenticationInterceptor"></interceptor>
+			<interceptor-stack name="authStack">
+				<interceptor-ref name="authentication"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="authStack"></default-interceptor-ref>
+
+		<global-results>
+			<result name="welcome" type="redirect">/welcome</result>
+			<result name="login_init" type="redirect">/login_init</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Throwable" result="welcome" />
+		</global-exception-mappings>
+
+		<action name="welcome" method="welcome" class="com.setsuna.nebula.action.WelcomeAction">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/jsp/welcome.jsp</result>
+		</action>
+
+		<action name="huan-luyen">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result type="redirectAction">
+				<param name="actionName">huan-luyen/cong-tac-huan-luyen-cong-ty-dich-vu-bao-ve-chuyen-nghiep</param>
+			</result>
+		</action>
+		<action name="huan-luyen/*" method="trainingInit" class="com.setsuna.nebula.action.TrainingAction">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/jsp/training.jsp</result>
+		</action>
+
+		<action name="tuyen-dung">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result type="redirectAction">
+				<param name="actionName">tuyen-dung/thong-tin-tuyen-dung-cong-ty-dich-vu-bao-ve-chuyen-nghiep</param>
+			</result>
+		</action>
+		<action name="tuyen-dung/*" method="recruitingInit" class="com.setsuna.nebula.action.RecruitingAction">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/jsp/recruiting.jsp</result>
+		</action>
+
+		<action name="lien-he">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result type="redirectAction">
+				<param name="actionName">lien-he/thong-tin-lien-he-cong-ty-dich-vu-bao-ve-chuyen-nghiep</param>
+			</result>
+		</action>
+		<action name="lien-he/*" method="contactInit" class="com.setsuna.nebula.action.ContactAction">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/jsp/contact.jsp</result>
+		</action>
+
+		<action name="service">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result type="redirectAction">
+				<param name="actionName">service/%{serviceId}/%{title}</param>
+			</result>
+		</action>
+		<action name="service/*/*" method="serviceInit" class="com.setsuna.nebula.action.GuardServiceAction">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<param name="serviceId">{1}</param>
+			<param name="title">{2}</param>
+			<result name="success">/WEB-INF/jsp/service.jsp</result>
+		</action>
+
+		<action name="dich-vu/bao-ve-yeu-nhan-vip/*" method="serviceInit" class="com.setsuna.nebula.action.GuardServiceAction">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<param name="serviceId">1</param>
+			<result name="success">/WEB-INF/jsp/service.jsp</result>
+		</action>
+		<action name="dich-vu/bao-ve-su-kien-hoi-cho/*" method="serviceInit" class="com.setsuna.nebula.action.GuardServiceAction">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<param name="serviceId">2</param>
+			<result name="success">/WEB-INF/jsp/service.jsp</result>
+		</action>
+		<action name="dich-vu/bao-ve-truong-hoc-benh-vien/*" method="serviceInit" class="com.setsuna.nebula.action.GuardServiceAction">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<param name="serviceId">3</param>
+			<result name="success">/WEB-INF/jsp/service.jsp</result>
+		</action>
+		<action name="dich-vu/bao-ve-cong-trinh-xay-dung-nha-xuong/*" method="serviceInit" class="com.setsuna.nebula.action.GuardServiceAction">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<param name="serviceId">4</param>
+			<result name="success">/WEB-INF/jsp/service.jsp</result>
+		</action>
+		<action name="dich-vu/bao-ve-cao-oc-van-phong/*" method="serviceInit" class="com.setsuna.nebula.action.GuardServiceAction">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<param name="serviceId">5</param>
+			<result name="success">/WEB-INF/jsp/service.jsp</result>
+		</action>
+		<action name="dich-vu/tu-van-lap-dat-he-thong-giam-sat-tuan-tra-an-ninh/*" method="serviceInit" class="com.setsuna.nebula.action.GuardServiceAction">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<param name="serviceId">6</param>
+			<param name="title">{1}</param>
+			<result name="success">/WEB-INF/jsp/service.jsp</result>
+		</action>
+
+		<action name="he-thong-quan-ly">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result type="redirectAction">
+				<param name="actionName">he-thong-quan-ly/he-thong-quan-ly-cong-ty-dich-vu-bao-ve-nghiep-vu-thang-long</param>
+			</result>
+		</action>
+		<action name="he-thong-quan-ly/*" method="manageSystemInit" class="com.setsuna.nebula.action.ManageSystemAction">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/jsp/manage-system.jsp</result>
+		</action>
+
+		<action name="tieu-chi-hoat-dong">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result type="redirectAction">
+				<param name="actionName">tieu-chi-hoat-dong/tieu-chi-hoat-dong-cong-ty-dich-vu-bao-ve-nghiep-vu-thang-long</param>
+			</result>
+		</action>
+		<action name="tieu-chi-hoat-dong/*" method="criterionInit" class="com.setsuna.nebula.action.CriterionAction">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/jsp/criterion.jsp</result>
+		</action>
+
+	</package>
+
+	<include file="struts-priority.xml"></include>
+	<include file="struts-useraction.xml"></include>
+	<include file="struts-login.xml"></include>
+	<include file="struts-employee.xml"></include>
+</struts>

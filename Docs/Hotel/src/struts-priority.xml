@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="priority" namespace="/" extends="default">
+
+		<action name="priority_add_init" class="com.setsuna.nebula.action.PriorityAction"
+			method="addInit">
+			<result name="success">/WEB-INF/jsp/private/priority/add.jsp</result>
+		</action>
+
+		<action name="priority_add" class="com.setsuna.nebula.action.PriorityAction"
+			method="add">
+			<result name="input">/WEB-INF/jsp/private/priority/add.jsp</result>
+			<result name="error">/WEB-INF/jsp/private/priority/add.jsp</result>
+			<result name="success" type="redirectAction">priority_list</result>
+		</action>
+
+		<action name="priority_update_init" class="com.setsuna.nebula.action.PriorityAction"
+			method="updateInit">
+			<result name="success">/WEB-INF/jsp/private/priority/update.jsp</result>
+		</action>
+
+		<action name="priority_update" class="com.setsuna.nebula.action.PriorityAction"
+			method="update">
+			<result name="input">/WEB-INF/jsp/private/priority/update.jsp</result>
+			<result name="error">/WEB-INF/jsp/private/priority/update.jsp</result>
+			<result name="success" type="redirectAction">priority_list</result>
+		</action>
+
+		<action name="priority_delete" class="com.setsuna.nebula.action.PriorityAction"
+			method="delete">
+			<result name="success" type="redirectAction">priority_list</result>
+		</action>
+
+		<action name="priority_list" class="com.setsuna.nebula.action.PriorityAction"
+			method="list">
+			<result name="success">/WEB-INF/jsp/private/priority/list.jsp</result>
+		</action>
+
+	</package>
+</struts>

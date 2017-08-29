@@ -1,0 +1,31 @@
+<%@page import="com.setsuna.nebula.util.CommonUtils"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
+
+<%
+	if (CommonUtils.IsRequestFromMobile(request)) {
+%>
+<tiles:insertDefinition name="mobile-template">
+
+	<tiles:putAttribute name="contents">
+
+		<s:property escapeHtml="false" value="content"/>
+		<h1 class="content-header">dịch vụ bảo vệ yếu nhân - vip</h1><P>Trong bối cảnh kinh tế cạnh tranh đa dạng hóa và tình hình an ninh xã hội phức tạp như hiện nay, ngày càng chứa nhiều tiềm ẩn những nguy cơ đe dọa an ninh đối với bất kỳ cá nhân nào, đặc biệt là giới VIP như các vị chính khách, các Doanh nhân thành đạt, Ca sĩ...</P><P>Dịch vụ bảo vệ yếu nhân của <span style="font-weight:bold;color:#0000ff;">Công Ty TNHH Dịch Vụ Bảo Vệ Nghiệp Vụ Thăng Long</span> là dịch vụ cung cấp Vệ sĩ đáng tin cậy, khách hàng có nhu cầu cần được bảo vệ an toàn sẽ được vệ sĩ của chúng tôi tháp tùng theo yêu cầu, lộ trình, các phương án bảo vệ yếu nhân được nghiên cứu kỹ lưỡng từ phòng nghiệp vụ của công ty chúng tôi, với phương châm phòng ngừa từ trước, ngăn chặn từ xa.</P><P>Khách hàng sẽ an tâm khi được đảm bảo an ninh tuyệt đối bởi những vệ sĩ của <span style="font-weight:bold;color:#0000ff;">Công Ty TNHH Dịch Vụ Bảo Vệ Nghiệp Vụ Thăng Long.</span></P><P class="service-head">Mô tả chi tiết</P><ol class="service-ol"><li><span>mục đích</span><ul><li>Đảm bảo tuyệt đối cho con người và tài sản ở mọi lúc mọi nơi.</li><li>Địa điểm: Tất cả các nơi khi khách hàng yêu cầu.</li><li>Mức độ an toàn: Tuyệt đối không để xảy ra sai phạm, sai lầm...</li></ul></li><li><span>đáp ứng các yêu cầu của khách hàng</span><ul><li>Phải có ngoại hình đẹp, nhanh nhẹn, hoạt bát.</li><li>Có trình độ nghiệp vụ giỏi.</li><li>Có hiểu biết nhất định về pháp luật.</li><li>Có kiến thức về tâm lý xã hội (tâm lý chung và tâm lý tội phạm)...</li></ul></li><li><span>NỘI DUNG CỤ THỂ ĐỐI VỚI BẢO VỆ YẾU NHÂN</span><ul><li><span style="font-weight:bold;">Nhận nhiệm vụ</span><ul><li>Khi được cấp trên điều động đi làm nhiệm vụ bảo vệ con người chúng ta phải xác định rõ đây là niềm tự hào nhất, vinh dự nhất của người làm công tác bảo vệ.</li><li>Bản thân con người là vô giá, quan hệ của con người vô cùng phong phú. Trong một điều kiện nhất định khách hàng cảm thấy không yên tâm nên đã trao toàn bộ tính mạng của họ cho ta bảo vệ. Đây thực sự là niềm tự hào nhưng cũng rất khó khăn. Vì vậy phương pháp xác định cho ta 1 tư tưởng tốt dám chịu thiệt thòi, hy sinh gian khổ, không được phép sai sót.</li><li>Xác định tính chất của việc bảo vệ là: một cuộc tham quan du lịch, lễ hội, làm việc hằng ngày...</li><li>Địa điểm: Tất cả khách hàng yêu cầu được bảo vệ ở những địa điểm nào, cố định hay di động.</li><li>Thời gian: Theo giờ, ngày, tuần, tháng ...</li><li>Sơ bộ tìm hiểu khách hàng là nam hay nữ, lứa tuổi nào, thuộc nhóm tâm lý, tính cách ra sao... điều đó sẽ giúp ich rất nhiều cho công việc ứng xử sau này.</li></ul></li><li><span style="font-weight:bold;">Công tác chuẩn bị</span><ul><li>Dù là một người hay một nhóm, một đội làm công tác bảo vệ cũng đều chỉ định người có trình độ bao quát lập phương án cụ thể trong đó xác định rõ:<ul><li>Đối tượng cần bảo vệ: số lượng.</li><li>Thời gian bảo vệ: Được yêu cầu như thế nào ?</li><li>Địa điểm cần bảo vệ: Cố định hay di động.</li></ul></li><li>Đặt ra một số tình huống có thể xảy ra để xử lý:<ul><li>Đi làm việc riêng, vệ sinh.</li><li>Muốn gặp gỡ khán giả.</li><li>Trốn tránh phần tử khủng bố.</li></ul></li><li>Chuẩn bị quần áo, trang phục phù hợp với khách hàng trong các trường hợp cụ thể như đi tham quan, tiếp khách, ngoại giao, lễ hội...Tiện lợi trong công việc và xử lý các tình huống nhưng vẫn bảo đảm tính thẩm mỹ.</li><li>Bảo đảm tính cơ động cao không bị bó chặt đi lại khó khăn ảnh hưởng đến di chuyển.</li><li>Lĩnh các trang thiết bị kem theo : máy điện thoại, nhắn tin, máy ảnh, bộ đàm, ống nhòm tùy yêu cầu khách hàng.</li></ul></li></ul></li></ol>
+
+	</tiles:putAttribute>
+
+</tiles:insertDefinition>
+
+<% } else { %>
+<tiles:insertDefinition name="public-template">
+
+	<tiles:putAttribute name="contents">
+
+		<s:property escapeHtml="false" value="content"/>
+		<h1 class="content-header">dịch vụ bảo vệ sự kiện - hội chợ</h1><P>Tình hình xã hội ngày nay khá phức tạp về những vụ việc cướp giật, gây rối nơi công cộng, móc túi, rạch túi tại các buổi triễn lãm, hội chợ...</P><P>Nhằm trấn áp đối tượng tội phạm, lập lại trật tự tại các buổi triễn lãm, hội chợ, các sự kiện lớn...</P><P><span style="font-weight:bold;color:#0000ff;">Công Ty TNHH Dịch Vụ Bảo Vệ Nghiệp Vụ Thăng Long</span> luôn đáp ứng những nhu cầu bảo vệ các sự kiện lớn, đảm bảo an ninh trật tự cho các hội chợ triễn lãm, các buổi ca nhạc ngoài trời... mang lại sự bình yên cho Quý khách hàng, hạn chế các rủi ro về thiệt hại tài sản, đảm bảo an toàn tính mạng cho nhân viên của mình và khách hàng đến tham quan vui chơi giải trí.</P><P style="font-weight:bold;">Hãy để chúng tôi cùng chung vai gánh vác với quý khách, chúng tôi sẽ đảm bảo sự an ninh tốt nhất cho Quý khách.</P><P class="service-head">Mô tả chi tiết</P><ol class="service-ol"><li><span>Đối với sự kiện là đêm nhạc</span><ul><li>Trực tiếp bảo vệ an toàn cho ca sĩ, nhạc công, khách mời và khán đài nơi để các trang thiết bị đắt tiền.</li><li>Bố trí các phương tiện kĩ thuật nghiệp vụ ở những nơi và vị trí cần thiết, kiểm tra người phương tiện ra vào theo nhiệm vụ phân công.</li><li>Phát hiện và xử lý kịp thời các hành vi phạm tội và các hành vi xấu khác làm ảnh hưởng đến đêm diễn.</li><li>Tổ chức lực lượng ứng trực cơ dộng nhanh để giải quyết sự việc khi cần thiết.</li></ul></li><li><span>Đối với các sự kiện khác</span><ul><li><span style="font-weight:bold;color:#0000ff;">Công Ty TNHH Dịch Vụ Bảo Vệ Nghiệp Vụ Thăng Long</span> sẽ có các phương án cụ thể và chi tiết nhằm đáp ứng các tình hình và diễn biến tại thời điểm diễn ra sự kiện.</li></ul></li></ol><h3>Hãy liên hệ với chúng tôi để được tư vấn, và có quyết định chính xác trước khi chọn dịch vụ bảo vệ.</h3>
+
+	</tiles:putAttribute>
+
+</tiles:insertDefinition>
+<% } %>

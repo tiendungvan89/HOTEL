@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.setsuna.nebula.dao.TargetProtectMapper">
+
+	<update id="update" parameterType="com.setsuna.nebula.entity.TargetProtect">
+		UPDATE target_protect
+		<set>
+			<if test="name != null">
+				name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="address != null">
+				address = #{address,jdbcType=VARCHAR},
+			</if>
+			<if test="startDate != null">
+				startdate = #{startDate,jdbcType=VARCHAR},
+			</if>
+			<if test="endDate != null">
+				enddate = #{endDate,jdbcType=VARCHAR},
+			</if>
+			<if test="note != null">
+				note = #{note,jdbcType=VARCHAR},
+			</if>
+		</set>
+		<where>
+			id = #{id,jdbcType=BIGINT}
+		</where>
+	</update>
+
+	<insert id="insert" parameterType="com.setsuna.nebula.entity.TargetProtect"
+		useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+		INSERT INTO target_protect
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="name != null">
+				name,
+			</if>
+			<if test="address != null">
+				address,
+			</if>
+			<if test="startDate != null">
+				startdate,
+			</if>
+			<if test="endDate != null">
+				enddate,
+			</if>
+			<if test="note != null">
+				note
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="name != null">
+				#{name,jdbcType=VARCHAR},
+			</if>
+			<if test="address != null">
+				#{address,jdbcType=VARCHAR},
+			</if>
+			<if test="startDate != null">
+				#{startDate,jdbcType=VARCHAR},
+			</if>
+			<if test="endDate != null">
+				#{endDate,jdbcType=VARCHAR},
+			</if>
+			<if test="note != null">
+				#{note,jdbcType=VARCHAR}
+			</if>
+		</trim>
+	</insert>
+
+	<select id="selectBy" resultType="com.setsuna.nebula.entity.TargetProtect" >
+		SELECT * FROM target_protect
+		<if test="param != null">
+			WHERE 1 = 1
+			<if test="param.id != null">
+				AND id = #{param.id,jdbcType=BIGINT}
+			</if>
+			<if test="param.name != null">
+				AND name LIKE '%' || #{param.name,jdbcType=VARCHAR} || '%'
+			</if>
+			<if test="param.address != null">
+				AND address LIKE '%' || #{param.address,jdbcType=VARCHAR} || '%'
+			</if>
+			<if test="param.startDateFrom != null and param.startDateFrom != ''">
+				AND startdate &gt;= #{param.startDateFrom,jdbcType=VARCHAR}
+			</if>
+			<if test="param.startDateTo != null and param.startDateTo != ''">
+				AND startdate &lt;= #{param.startDateTo,jdbcType=VARCHAR}
+			</if>
+			<if test="param.endDateFrom != null and param.endDateFrom != ''">
+				AND enddate &gt;= #{param.endDateFrom,jdbcType=VARCHAR}
+			</if>
+			<if test="param.endDateTo != null and param.endDateTo != ''">
+				AND enddate &lt;= #{param.endDateTo,jdbcType=VARCHAR}
+			</if>
+			<if test="param.note != null">
+				AND note LIKE '%' || #{param.note,jdbcType=VARCHAR} || '%'
+			</if>
+		</if>
+		ORDER BY name
+	</select>
+
+</mapper>

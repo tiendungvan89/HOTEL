@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.setsuna.nebula.dao.GuardServiceMapper">
+
+	<select id="selectBy" resultType="com.setsuna.nebula.entity.GuardService">
+		SELECT * FROM guard_service
+		<if test="param != null">
+			WHERE 1 = 1
+			<if test="param.id != null">
+				AND id = #{param.id,jdbcType=BIGINT}
+			</if>
+			<if test="param.status != null">
+				AND status = #{param.status,jdbcType=INTEGER}
+			</if>
+		</if>
+		ORDER BY id
+	</select>
+
+</mapper>

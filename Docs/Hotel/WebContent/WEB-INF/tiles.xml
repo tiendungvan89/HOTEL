@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+		"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+		"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+<!-- public -->
+	<definition name="default" template="/WEB-INF/template/public-template.jsp">
+		<put-attribute name="title" value="WMS" />
+		<put-attribute name="header" value="/WEB-INF/template/header.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/template/footer.jsp" />
+		<put-attribute name="top-menu" value="/WEB-INF/template/top-menu.jsp" />
+		<put-attribute name="left-menu" value="/WEB-INF/template/left-menu.jsp" />
+		<put-attribute name="banner" value="/WEB-INF/template/banner.jsp" />
+		<put-attribute name="slide-show" value="/WEB-INF/template/slide-show.jsp" />
+		<put-attribute name="MainTitle" value="" />
+		<put-attribute name="contents" value="" />
+	</definition>
+
+	<definition name="mobile" template="/WEB-INF/template/mobile/mobile-template.jsp">
+		<put-attribute name="header" value="/WEB-INF/template/mobile/header.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/template/mobile/footer.jsp" />
+		<put-attribute name="top-menu" value="/WEB-INF/template/mobile/top-menu.jsp" />
+		<put-attribute name="contents" value="" />
+	</definition>
+
+	<definition name="public-template" extends="default">
+	</definition>
+
+	<definition name="mobile-template" extends="mobile">
+	</definition>
+
+<!-- admin manage -->
+	<definition name="private-template"
+		template="/WEB-INF/template/private/private-template.jsp">
+		<put-attribute name="header" value="" />
+		<put-attribute name="header-pannel"
+			value="/WEB-INF/template/private/header-panel.jsp" />
+		<put-attribute name="left-menu"
+			value="/WEB-INF/template/private/left-menu.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/template/private/footer.jsp" />
+	</definition>
+
+	<definition name="content-layout-template" template="/WEB-INF/template/private/content/layout-template.jsp">
+		<put-attribute name="header" value="" />
+		<put-attribute name="menu" value="" />
+		<put-attribute name="MainTitle" value="" />
+		<put-attribute name="contents" value="" />
+	</definition>
+
+</tiles-definitions>

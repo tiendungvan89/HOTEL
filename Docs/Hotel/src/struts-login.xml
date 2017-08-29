@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="login" namespace="/" extends="default">
+
+		<action name="login_init" method="loginInit" class="com.setsuna.nebula.action.LoginAction">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/jsp/login.jsp</result>
+		</action>
+
+		<action name="login" method="login" class="com.setsuna.nebula.action.LoginAction">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="input">/WEB-INF/jsp/login.jsp</result>
+			<result name="error">/WEB-INF/jsp/login.jsp</result>
+			<result name="success" type="redirectAction">manage</result>
+		</action>
+
+		<action name="manage">
+			<result name="success" type="tiles">private-template</result>
+		</action>
+
+		<action name="logout" class="com.setsuna.nebula.action.LoginAction" method="logout">
+			<result name="success" type="redirectAction">login_init</result>
+		</action>
+
+	</package>
+</struts>
